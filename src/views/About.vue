@@ -6,11 +6,13 @@
 </template>
 
 <script>
+import TodayProvider from "./today_provider";
+
 export default {
     computed: {
         isBirthday: function () {
-            const date = new Date();
-            return date.getUTCMonth() === 3 && date.getUTCDate() === 9;
+            const date = TodayProvider.getToday();
+            return date.getMonth() === 3 && date.getDate() === 9;
         }
     }
 }
